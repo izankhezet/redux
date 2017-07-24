@@ -1,5 +1,56 @@
-# redux
-# app
+import React from "react";
+
+export class Main extends React.Component {
+    render() {
+        return (
+            <div>
+                <div className="row">
+                    <div className="col-xs-12">
+                        <h1>The Main Page</h1>
+                    </div>
+                </div>
+                <div className="row">
+                    <div className="col-xs-12">
+                        <button
+                            className="btn btn-primary"
+                            onClick={() => this.props.changeUsername('Anna')}>Change the Username</button>
+                    </div>
+                </div>
+            </div>
+        );
+    }
+}
+
+
+
+
+
+
+import React from "react";
+
+export class User extends React.Component {
+    render() {
+        return (
+            <div>
+                <div className="row">
+                    <div className="col-xs-12">
+                        <h1>The User Page</h1>
+                    </div>
+                </div>
+                <div className="row">
+                    <div className="col-xs-12">
+                        <p>User Name: {this.props.username}</p>
+                    </div>
+                </div>
+            </div>
+        );
+    }
+}
+
+
+
+
+
 import React from 'react';
 import connect from 'react-redux'; //include a connect fct to connect react with redux
 
@@ -44,49 +95,3 @@ const mapDispatchToProps = (dispatch) => {
 //which is expect a component as args
 
 connect(mapStateToProps, mapDispatchToProps)(App);
-
-#main
-import React from "react";
-
-export class Main extends React.Component {
-    render() {
-        return (
-            <div>
-                <div className="row">
-                    <div className="col-xs-12">
-                        <h1>The Main Page</h1>
-                    </div>
-                </div>
-                <div className="row">
-                    <div className="col-xs-12">
-                        <button
-                            className="btn btn-primary"
-                            onClick={() => this.props.changeUsername('Anna')}>Change the Username</button>
-                    </div>
-                </div>
-            </div>
-        );
-    }
-}
-
-#user
-import React from "react";
-
-export class User extends React.Component {
-    render() {
-        return (
-            <div>
-                <div className="row">
-                    <div className="col-xs-12">
-                        <h1>The User Page</h1>
-                    </div>
-                </div>
-                <div className="row">
-                    <div className="col-xs-12">
-                        <p>User Name: {this.props.username}</p>
-                    </div>
-                </div>
-            </div>
-        );
-    }
-}
